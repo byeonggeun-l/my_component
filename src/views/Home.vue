@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <Informatiom
+    <Informatiom
       :component-name="'Context_Menu_Original'"
       :component-path="'/src/Components/01_Context_Menu/Context_Menu_Original'"
       :component-link="'context_menu_original'"
@@ -57,7 +57,7 @@
             똑같은 기능을 구현하기 위한 목표는 달성했다!
             `
       "
-    /> -->
+    />
     <Informatiom
       :component-name="'Infinite_Scroll_Original'"
       :component-path="
