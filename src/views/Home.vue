@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Informatiom
+    <!-- <Informatiom
       :component-name="'Context_Menu_Original'"
       :component-path="'/src/Components/01_Context_Menu/Context_Menu_Original'"
       :component-link="'context_menu_original'"
@@ -57,13 +57,13 @@
             똑같은 기능을 구현하기 위한 목표는 달성했다!
             `
       "
-    />
+    /> -->
     <Informatiom
       :component-name="'Infinite_Scroll_Original'"
       :component-path="
         '/src/views/Components/02_Infinite_Scroll/Infinite_Scroll_Original'
       "
-      :component-link="'Infinite_Scroll_Original'"
+      :component-link="'infinite_scroll_original'"
       :component-desc="
         `무한 스크롤, 페이지 하단에 도달하면 다음 페이지로 이동하는 것이 아닌<br />
                 페이지 하단에 도달하면 새로운 컨텐츠가 한 화면에 추가로 로드가 된다.`
