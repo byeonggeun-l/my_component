@@ -14,8 +14,8 @@ const routes = [
   //Default
   //Default
   {
-    path: '/Infinite_Scroll_Original/',
-    name: 'Infinite_Scroll_Original',
+    path: '/Infinite_Scroll_Original',
+    name: 'InfiniteScrollOriginal',
     component: Infinite_Scroll_Original
   },
   //Default For Github
@@ -24,8 +24,8 @@ const routes = [
   //Default For Github
   //Default For Github
   {
-    path: '/my_component/Infinite_Scroll_Original/',
-    name: 'Infinite_Scroll_Original',
+    path: '/my_component/Infinite_Scroll_Original',
+    name: 'InfiniteScrollOriginal',
     component: Infinite_Scroll_Original
   },
 ]
