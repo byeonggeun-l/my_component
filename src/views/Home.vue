@@ -90,12 +90,13 @@
                 페이지 하단에 도달하면 새로운 컨텐츠가 한 화면에 추가로 로드가 된다.`
       "
       :component-skills="
-        `HTML(Details), CSS, 스크롤이벤트감지, async&await, promise.<br />
-        Original에서 스크롤 하는 만큼 스크롤에 등록된 이벤트가 호출이 되어
-        디바운스 핵심 함수(clearTimeout, setTimeout)들을 활용하여
-        디바운싱 기능을 구현했다.
-        - 연이어 호출되는 함수들 중 마지막 함수(또는 제일 처음)만
-        호출 하도록 하는 것.`
+        `HTML(Details), CSS, 스크롤이벤트감지, async&await, promise,<br />
+        clearTimeout, setTimeout.<br />
+        Original에서 스크롤 하는 만큼 스크롤에 등록된 이벤트가<br />
+        호출이 되어 디바운스 핵심 함수(clearTimeout, setTimeout)들을 <br />
+        활용하여 디바운싱 기능을 구현했다. <br />
+        Debounce - 마지막으로 함수가 호출된 시점에서 <br />
+        특정 초(설정한)가 지난 후 최종 이벤트만 발생하도록 하는 것.`
       "
     />
   </div>
