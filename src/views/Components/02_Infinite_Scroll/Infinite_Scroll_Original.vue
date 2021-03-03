@@ -47,14 +47,6 @@ export default {
 
 
 
-    let timeoutId = null;
-    console.log("1 : ");
-    console.log(timeoutId);
-    clearTimeout(timeoutId);
-    console.log("2 : ");
-    console.log(timeoutId);
-
-
 
     //Default Call
     ///////////////////////////////////
@@ -77,6 +69,7 @@ export default {
     // 스크롤이 페이지 맨 하단에 위치해있는지 감지를 한다.
     // 맨 하단에 위치해 있을 경우 loadMore 메서드를 호출한다.
     onScroll(event){
+      console.log('Call onScroll()');
       const {
         scrollHeight,
         scrollTop,
@@ -100,7 +93,6 @@ export default {
       target.classList.add("loading");
       await this.renderList(this.page++);
       target.classList.remove("loading");
-      console.log('loadMore');
     },
     // renderList()
     // dummyFetcher 함수를 이용하여
