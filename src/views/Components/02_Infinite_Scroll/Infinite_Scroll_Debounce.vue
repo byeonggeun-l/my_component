@@ -68,6 +68,11 @@ export default {
 
 
   },
+  beforeUnmount(){
+    ///////////////////////////////////
+    document.removeEventListener("scroll", this.onScroll);
+    ///////////////////////////////////
+  },
   methods: {
     // onScroll
     // 스크롤이 페이지 맨 하단에 위치해있는지 감지를 한다.
@@ -166,15 +171,6 @@ export default {
       }
       return obj;
     },
-
-
-    
-    // document.addEventListener("scroll", this.debounce);
-    // this.addDebounceScrollListner();
-
-
-
-
   }
 };
 </script>
