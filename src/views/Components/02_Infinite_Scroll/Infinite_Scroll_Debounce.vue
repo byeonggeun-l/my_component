@@ -17,9 +17,10 @@
 // import HelloWorld from '@/components/HelloWorld.vue'
 import { v4 as uuidv4 } from "uuid";
 import { LoremIpsum } from "lorem-ipsum";
+import {debounce} from './util.js'
 
 export default {
-  name: "InfiniteScrollOriginal",
+  name: "InfiniteScrollDebounce",
   components: {
     // HelloWorld
   },
@@ -47,12 +48,7 @@ export default {
 
 
 
-    let timeoutId = null;
-    console.log("1 : ");
-    console.log(timeoutId);
-    clearTimeout(timeoutId);
-    console.log("2 : ");
-    console.log(timeoutId);
+
 
 
 
@@ -60,28 +56,27 @@ export default {
     ///////////////////////////////////
     this.loadMore();
     ///////////////////////////////////
-    document.addEventListener("scroll", this.onScroll);
+    // this.addDebounceScrollListner();
+    document.addEventListener("scroll", debounce(this.onScroll, 1000));
+    // document.addEventListener("scroll", this.onScroll);
+    // const myFunction = _.debo
     ///////////////////////////////////
 
 
 
 
-  },
-  beforeUnmount(){
-    ///////////////////////////////////
-    document.removeEventListener("scroll", this.onScroll);
-    ///////////////////////////////////
+
+
   },
   methods: {
     // onScroll
     // 스크롤이 페이지 맨 하단에 위치해있는지 감지를 한다.
     // 맨 하단에 위치해 있을 경우 loadMore 메서드를 호출한다.
-    onScroll(event){
-      const {
-        scrollHeight,
-        scrollTop,
-        clientHeight
-      } = event.target.scrollingElement;
+    onScroll(){
+      console.log('Call onScroll()');
+      const scrollHeight = document.getElementsByTagName("html")[0].offsetHeight;
+      const scrollTop = window.top.pageYOffset;
+      const clientHeight = window.top.innerHeight;
       if (scrollTop + clientHeight === scrollHeight) {
         this.loadMore();
       }
@@ -100,7 +95,6 @@ export default {
       target.classList.add("loading");
       await this.renderList(this.page++);
       target.classList.remove("loading");
-      console.log('loadMore');
     },
     // renderList()
     // dummyFetcher 함수를 이용하여
@@ -122,7 +116,7 @@ export default {
         resolve => {
           setTimeout(() => {
             resolve(method(args))
-          }, 1000 * (args + 1));
+          }, 100);
         }
       );
 
@@ -173,6 +167,10 @@ export default {
       return obj;
     },
 
+
+    
+    // document.addEventListener("scroll", this.debounce);
+    // this.addDebounceScrollListner();
 
 
 
