@@ -100,6 +100,30 @@
         특정 초(설정한)가 지난 후 최종 이벤트만 발생하도록 하는 것.`
       "
     />
+    <Informatiom
+      :component-name="'Infinite_Scroll_Observer'"
+      :component-path="
+        '/src/views/Components/02_Infinite_Scroll/Infinite_Scroll_Observer'
+      "
+      :component-link="'infinite_scroll_observer'"
+      :component-desc="
+        `무한 스크롤, 페이지 하단에 도달하면 다음 페이지로 이동하는 것이 아닌<br />
+                페이지 하단에 도달하면 새로운 컨텐츠가 한 화면에 추가로 로드가 된다.`
+      "
+      :component-skills="
+        `HTML(Details), CSS, 스크롤이벤트감지, async&await, promise,<br />
+        IntersectionObserver<br/>
+        IntersectionObserver 을 이용하여 DOM 엘리먼트의 노출 여부를 비동기적으로<br />
+        관찰하여 무한 스크롤 페이지를 구현하였다.<br />
+        페이지를 맨 아래로 내려야 #fetchmore 엘리먼트가 보이고,<br />
+        해당 엘리먼트가 보일 때 다음 컨텐츠가 로딩 되도록 구현을 했다.<br />
+        Intersection Observer API 로 인해 스크롤 이벤트를 등록하지 않고도,<br />
+        무한 스크롤을 구현을 했고,<br />
+        해당 API는 이미지의 동적 로딩, 광고 배너의 노출 측정 등의 기능에 <br />
+        효율적으로 사용을 할 수 있는 API라 소개가 되고 있다.<br />
+        `
+      "
+    />
   </div>
 </template>
 
