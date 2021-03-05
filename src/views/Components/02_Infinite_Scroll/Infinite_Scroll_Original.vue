@@ -69,7 +69,6 @@ export default {
   },
   unmounted() {
     ///////////////////////////////////
-    clearTimeout(this.timeout);
     document.removeEventListener("scroll", this.onScroll);
     ///////////////////////////////////
   },
