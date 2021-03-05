@@ -2,6 +2,7 @@
   <div id="infinite_scroll_section">
     <ul
       id="nav"
+      ref="refNav"
       @click="clickNav"
     >
       <li class="on">
@@ -15,7 +16,10 @@
       <li><button>7</button></li>
       <li><button>8</button></li>
     </ul>
-    <div id="contents">
+    <div
+      id="contents"
+      ref="refContents"
+    >
       <div>1</div>
       <div>2</div>
       <div>3</div>
@@ -49,9 +53,9 @@ export default {
   },  
   mounted() {
     // Init
-    this.navElem = document.querySelector("#nav");
+    this.navElem = this.$refs.refNav;
     this.navItems = Array.from(this.navElem.children);
-    this.contentsElem = document.querySelector("#contents");
+    this.contentsElem = this.$refs.refContents;
     this.contentItems = Array.from(this.contentsElem.children);
     // ========================================================
     // this.contentItems 은 #content > div 요소들의 값들이 들어있다.
