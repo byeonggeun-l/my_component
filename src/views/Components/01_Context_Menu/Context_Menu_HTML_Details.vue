@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="wrapper">
+    <div
+      ref="refWrapper"
+      class="wrapper"
+    >
       <h1>
         Context_Menu_HTML_Details!
       </h1>
@@ -198,7 +201,7 @@ export default {
     window.scrollTo(0, 0);
   },
   mounted () {
-    const items = document.querySelectorAll('details');
+    const items = this.$refs.refWrapper.querySelectorAll('details');
 
     document.body.addEventListener('click', function (e) {
       if (e.target.nodeName !== 'SUMMARY' &&
