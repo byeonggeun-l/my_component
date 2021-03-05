@@ -6,6 +6,7 @@ import Context_Menu_Vue from '../views/Components/01_Context_Menu/Context_Menu_V
 import Infinite_Scroll_Original from '../views/Components/02_Infinite_Scroll/Infinite_Scroll_Original'
 import Infinite_Scroll_Debounce from '../views/Components/02_Infinite_Scroll/Infinite_Scroll_Debounce'
 import Infinite_Scroll_Observer from '../views/Components/02_Infinite_Scroll/Infinite_Scroll_Observer'
+import Infinite_Scroll_Spy_01 from '../views/Components/03_Scroll_Spy/Infinite_Scroll_Spy_01'
 
 const routes = [
   {
@@ -47,6 +48,11 @@ const routes = [
     path: '/infinite_scroll_observer',
     name: 'infinite_scroll_observer',
     component: Infinite_Scroll_Observer
+  },
+  {
+    path: '/infinite_scroll_spy_01',
+    name: 'infinite_scrollspy_01',
+    component: Infinite_Scroll_Spy_01
   },
   //Default For Github
   //Default For Github

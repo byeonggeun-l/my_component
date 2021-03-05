@@ -124,6 +124,20 @@
         `
       "
     />
+    <Informatiom
+      :component-name="'infinite_scroll_Spy_01'"
+      :component-path="
+        '/src/views/Components/03_Scroll_Spy/Infinite_Scroll_Spy_01'
+      "
+      :component-link="'infinite_scroll_spy_01'"
+      :component-desc="
+        `스크롤 스파이(스크롤 네비게이션)`
+      "
+      :component-skills="
+        `HTML(Details), CSS, 스크롤이벤트감지, 
+        `
+      "
+    />
   </div>
 </template>
 

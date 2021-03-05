@@ -211,6 +211,10 @@
 <script>
 export default {
   name: 'ContextMenuOriginal',
+  created(){
+    // 페이지 이동 시 스크롤 초기화.
+    window.scrollTo(0, 0);
+  },
   mounted () {
 
     const items = document.querySelectorAll('.item');
