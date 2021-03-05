@@ -4,10 +4,17 @@
   >
     <div
       id="scroll"
+      ref="refScroll"
       class="loading"
     >
-      <ul id="list" />
-      <div id="fetchMore" />
+      <ul
+        id="list" 
+        ref="refList"
+      />
+      <div
+        id="fetchMore" 
+        ref="refFetchMore"
+      />
     </div>
   </div>
 </template>
@@ -30,6 +37,7 @@ export default {
       ITEMS_PER_PAGE:20,
       lorem:null,
       listElem:null,
+      timeOut:null,
     };
   },
   created(){
@@ -42,7 +50,7 @@ export default {
       'wordsPerSentence': { min: 10, max: 30 },
     });
     ///////////////////////////////////
-    this.listElem = document.querySelector("#list");
+    this.listElem = this.$refs.refList;
     ///////////////////////////////////
 
 
@@ -59,8 +67,9 @@ export default {
 
 
   },
-  beforeUnmount(){
+  unmounted() {
     ///////////////////////////////////
+    clearTimeout(this.timeout);
     document.removeEventListener("scroll", this.onScroll);
     ///////////////////////////////////
   },
@@ -86,8 +95,8 @@ export default {
     // fetchMore 위치에 loading 이 나오게 한다.
     // 또한 renderList 를 호출한다.
     async loadMore(){      
-      const app = document.querySelector("#scroll");
-      const fetchMoreTrigger = document.querySelector("#fetchMore");
+      const app = this.$refs.refScroll
+      const fetchMoreTrigger = this.$refs.refFetchMore
 
       const target = this.page ? fetchMoreTrigger : app;
       target.classList.add("loading");
@@ -112,7 +121,7 @@ export default {
     dummyFetcher(method, args){
       return new Promise(
         resolve => {
-          setTimeout(() => {
+          this.timeOut = setTimeout(() => {
             resolve(method(args))
           }, 1000 * (args + 1));
         }

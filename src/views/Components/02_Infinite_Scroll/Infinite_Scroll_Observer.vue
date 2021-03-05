@@ -4,10 +4,17 @@
   >
     <div
       id="scroll"
+      ref="refScroll"
       class="loading"
     >
-      <ul id="list" />
-      <div id="fetchMore" />
+      <ul
+        id="list" 
+        ref="refList"
+      />
+      <div
+        id="fetchMore" 
+        ref="refFetchMore"
+      />
     </div>
   </div>
 </template>
@@ -33,6 +40,7 @@ export default {
       leadMoreObserver:null,
       app:'',
       fetchMoreTrigger:'',
+      timeOut:null,
     };
   },
   created(){
@@ -45,12 +53,12 @@ export default {
       'wordsPerSentence': { min: 10, max: 30 },
     });
     ///////////////////////////////////
-    this.listElem = document.querySelector("#list");
+    this.listElem = this.$refs.refList;
     ///////////////////////////////////
 
     ///////////////////////////////////
-    this.app = document.querySelector("#scroll");
-    this.fetchMoreTrigger = document.querySelector("#fetchMore");
+    this.app = this.$refs.refScroll;
+    this.fetchMoreTrigger = this.$refs.refFetchMore;
     ///////////////////////////////////
 
     //Default Call
@@ -72,7 +80,7 @@ export default {
 
 
   },
-  beforeUnmount(){
+  unmounted() {
   },
   methods: {
     // onScroll
@@ -98,6 +106,7 @@ export default {
     async loadMore(){      
 
       const target = this.page ? this.fetchMoreTrigger : this.app;
+
       target.classList.add("loading");
       await this.renderList(this.page++);
       target.classList.remove("loading");
@@ -120,7 +129,7 @@ export default {
     dummyFetcher(method, args){
       return new Promise(
         resolve => {
-          setTimeout(() => {
+          this.timeOut = setTimeout(() => {
             resolve(method(args))
           }, 1000 * (args + 1));
         }

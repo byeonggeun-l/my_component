@@ -1,9 +1,15 @@
 <template>
-  <div class="context_menu_original">
+  <div
+    ref="refContextMenuOriginal"
+    class="context_menu_original"
+  >
     <h1>
       context_menu_original!
     </h1>
-    <div class="wrapper">
+    <div
+      ref="refWrapper"
+      class="wrapper"
+    >
       <div class="item">
         Lorem ipsum dolor sit amet,
         <div class="context">
@@ -217,9 +223,8 @@ export default {
   },
   mounted () {
 
-    const items = document.querySelectorAll('.item');
-    const body = document.querySelector('.context_menu_original');
-    console.log('body : ' + body);
+    const items = this.$refs.refWrapper.querySelectorAll('.item');
+    const body = this.$refs.refContextMenuOriginal;
 
     body.addEventListener('click', function (e) {
       const targetClassList = e.target.classList;
