@@ -80,6 +80,12 @@ export default {
     // Add event
 
   },
+  beforeUnmount(){
+    ///////////////////////////////////
+    document.removeEventListener("scroll", this.onScroll);
+    document.removeEventListener("resize", this.onScroll);
+    ///////////////////////////////////
+  },
   methods:{
     // 클릭한 요소를 포함하고 있는 
     // li 요소를 찾아서
