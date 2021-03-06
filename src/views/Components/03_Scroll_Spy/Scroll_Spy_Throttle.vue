@@ -78,13 +78,13 @@ export default {
     // 스크롤 위치를 비교하여 사용자가 현재 어느 위치를
     // 스크롤 하고 있는지 감지를 한다.
     this.throttle = throttle(this.setFocusElement, 300);
-    window.addEventListener("scroll", this.throttle);
-    // window.addEventListener("scroll", this.setFocusElement);
+    document.addEventListener("scroll", this.throttle);
+    // document.addEventListener("scroll", this.setFocusElement);
     // 강좌에서는 윈도우 크기를 변경하지 않았지만
     // 윈도우 크기를 변경을 하는 사용자들을 위해
     // 윈도우 크기 변경 이벤트를 감지하고,
     // 그때마다 요소 크기들을 다시 셋팅해야한다.
-    window.addEventListener("resize", this.resetElementPosition);
+    document.addEventListener("resize", this.resetElementPosition);
     // Add event
 
   },
