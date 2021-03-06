@@ -88,10 +88,10 @@ export default {
     // Add event
 
   },
-  beforeUnmount(){
+  unmounted(){
     ///////////////////////////////////
-    document.removeEventListener("scroll", this.onScroll);
-    document.removeEventListener("resize", this.onScroll);
+    document.removeEventListener("scroll", this.throttle);
+    document.removeEventListener("resize", this.resetElementPosition);
     ///////////////////////////////////
   },
   methods:{
