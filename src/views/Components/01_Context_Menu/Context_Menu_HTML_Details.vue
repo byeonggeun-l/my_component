@@ -203,7 +203,22 @@ export default {
   mounted () {
     const items = this.$refs.refWrapper.querySelectorAll('details');
 
-    document.body.addEventListener('click', function (e) {
+    window.body.addEventListener('click', function (e) {
+      if (e.target.nodeName !== 'SUMMARY' &&
+    e.target.nodeName !== 'P') {
+        items.forEach(function (item) {
+          item.removeAttribute('open');
+        });
+      }
+      items.forEach(function (item) {
+        if (item !== e.target.parentElement) {
+          item.removeAttribute('open');
+        }
+      });
+    });
+  },
+  unmounted(){
+    window.body.removeEventListener('click', function (e) {
       if (e.target.nodeName !== 'SUMMARY' &&
     e.target.nodeName !== 'P') {
         items.forEach(function (item) {

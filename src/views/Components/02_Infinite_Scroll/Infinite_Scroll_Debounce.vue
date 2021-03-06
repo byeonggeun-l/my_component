@@ -66,8 +66,8 @@ export default {
     this.loadMore();
     ///////////////////////////////////
     // this.addDebounceScrollListner();
-    document.addEventListener("scroll", this.debounce);
-    // document.addEventListener("scroll", this.onScroll);
+    window.addEventListener("scroll", this.debounce);
+    // window.addEventListener("scroll", this.onScroll);
     // const myFunction = _.debo
     ///////////////////////////////////
 
@@ -79,7 +79,7 @@ export default {
   },
   unmounted() {
     ///////////////////////////////////
-    document.removeEventListener("scroll", this.debounce);
+    window.removeEventListener("scroll", this.debounce);
     ///////////////////////////////////
   },
   methods: {

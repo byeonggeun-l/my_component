@@ -75,19 +75,19 @@ export default {
     // 각 #contents > div 요소들의 시작 위치, 끝 위치와
     // 스크롤 위치를 비교하여 사용자가 현재 어느 위치를
     // 스크롤 하고 있는지 감지를 한다.
-    document.addEventListener("scroll", this.setFocusElement);
+    window.addEventListener("scroll", this.setFocusElement);
     // 강좌에서는 윈도우 크기를 변경하지 않았지만
     // 윈도우 크기를 변경을 하는 사용자들을 위해
     // 윈도우 크기 변경 이벤트를 감지하고,
     // 그때마다 요소 크기들을 다시 셋팅해야한다.
-    document.addEventListener("resize", this.resetElementPosition);
+    window.addEventListener("resize", this.resetElementPosition);
     // Add event
 
   },
   unmounted(){
     ///////////////////////////////////
-    document.removeEventListener("scroll", this.setFocusElement);
-    document.removeEventListener("resize", this.resetElementPosition);
+    window.removeEventListener("scroll", this.setFocusElement);
+    window.removeEventListener("resize", this.resetElementPosition);
     ///////////////////////////////////
   },
   methods:{

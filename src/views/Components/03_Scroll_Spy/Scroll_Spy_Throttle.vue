@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { throttle } from './util.js'
+import { throttle, debounce } from './util.js'
 export default {
   name: "ScrollSopyThrottle",
   components: {
@@ -47,6 +47,7 @@ export default {
       contentItems:null,
       offsetTops:[''],
       throttle:null,
+      debounce:null,
     };
   },
   created(){
@@ -78,20 +79,21 @@ export default {
     // 스크롤 위치를 비교하여 사용자가 현재 어느 위치를
     // 스크롤 하고 있는지 감지를 한다.
     this.throttle = throttle(this.setFocusElement, 300);
-    document.addEventListener("scroll", this.throttle);
-    // document.addEventListener("scroll", this.setFocusElement);
+    window.addEventListener("scroll", this.throttle);
+    // window.addEventListener("scroll", this.setFocusElement);
     // 강좌에서는 윈도우 크기를 변경하지 않았지만
     // 윈도우 크기를 변경을 하는 사용자들을 위해
     // 윈도우 크기 변경 이벤트를 감지하고,
     // 그때마다 요소 크기들을 다시 셋팅해야한다.
-    document.addEventListener("resize", this.resetElementPosition);
+    this.debounce = debounce(this.resetElementPosition, 300);
+    window.addEventListener("resize", this.debounce);
     // Add event
 
   },
   unmounted(){
     ///////////////////////////////////
-    document.removeEventListener("scroll", this.throttle);
-    document.removeEventListener("resize", this.resetElementPosition);
+    window.removeEventListener("scroll", this.throttle);
+    window.removeEventListener("resize", this.debounce);
     ///////////////////////////////////
   },
   methods:{
@@ -117,7 +119,6 @@ export default {
       this.setFocusElement();
     },
     setFocusElement(){
-      console.log('asdf');
       const scrollTop = document.documentElement.scrollTop;
       const targetIndex = this.offsetTops.findIndex(([from, to]) =>(
         // scrollTop >= from && scrollTop < to
