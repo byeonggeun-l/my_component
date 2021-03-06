@@ -125,16 +125,34 @@
       "
     />
     <Informatiom
-      :component-name="'infinite_scroll_Spy_01'"
+      :component-name="'Scroll_Spy_Original'"
       :component-path="
-        '/src/views/Components/03_Scroll_Spy/Infinite_Scroll_Spy_01'
+        '/src/views/Components/03_Scroll_Spy/Scroll_Spy_Original'
       "
-      :component-link="'infinite_scroll_spy_01'"
+      :component-link="'Scroll_Spy_Original'"
       :component-desc="
         `스크롤 스파이(스크롤 네비게이션)`
       "
       :component-skills="
         `HTML(Details), CSS, 스크롤이벤트감지, 
+        `
+      "
+    />
+    <Informatiom
+      :component-name="'Scroll_Spy_Throttle'"
+      :component-path="
+        '/src/views/Components/03_Scroll_Spy/Scroll_Spy_Throttle'
+      "
+      :component-link="'Scroll_Spy_Throttle'"
+      :component-desc="
+        `스크롤 스파이(스크롤 네비게이션)`
+      "
+      :component-skills="
+        `HTML(Details), CSS, 스크롤이벤트감지, Throttle.
+        Original에서 스크롤 하는 만큼 이벤트가 감지되어
+        호출이 되어 성능상 좋지 않다.
+        Throttle 을 이용하여 설정한 시간이 소요(0.3초)가 되고,
+        호출이 되도록 만들었다.
         `
       "
     />

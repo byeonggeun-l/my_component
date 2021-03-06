@@ -6,7 +6,8 @@ import Context_Menu_Vue from '../views/Components/01_Context_Menu/Context_Menu_V
 import Infinite_Scroll_Original from '../views/Components/02_Infinite_Scroll/Infinite_Scroll_Original'
 import Infinite_Scroll_Debounce from '../views/Components/02_Infinite_Scroll/Infinite_Scroll_Debounce'
 import Infinite_Scroll_Observer from '../views/Components/02_Infinite_Scroll/Infinite_Scroll_Observer'
-import Infinite_Scroll_Spy_01 from '../views/Components/03_Scroll_Spy/Infinite_Scroll_Spy_01'
+import Scroll_Spy_Original from '../views/Components/03_Scroll_Spy/Scroll_Spy_Original'
+import Scroll_Spy_Throttle from '../views/Components/03_Scroll_Spy/Scroll_Spy_Throttle'
 
 const routes = [
   {
@@ -50,9 +51,14 @@ const routes = [
     component: Infinite_Scroll_Observer
   },
   {
-    path: '/infinite_scroll_spy_01',
-    name: 'infinite_scrollspy_01',
-    component: Infinite_Scroll_Spy_01
+    path: '/scroll_spy_original',
+    name: 'scroll_spy_original',
+    component: Scroll_Spy_Original
+  },
+  {
+    path: '/scroll_spy_throttle',
+    name: 'scroll_spy_throttle',
+    component: Scroll_Spy_Throttle
   },
   //Default For Github
   //Default For Github
@@ -85,9 +91,14 @@ const routes = [
     component: Infinite_Scroll_Debounce
   },
   {
-    path: '/my_component/infinite_scroll_observer',
-    name: 'infinite_scroll_observer_github',
-    component: Infinite_Scroll_Observer
+    path: '/my_component/scroll_spy_original',
+    name: 'scroll_spy_original_github',
+    component: Scroll_Spy_Original
+  },
+  {
+    path: '/my_component/scroll_spy_throttle',
+    name: 'scroll_spy_throttle_github',
+    component: Scroll_Spy_Throttle
   },
 ]
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="infinite_scroll_section">
+  <div id="scroll_spy_section">
     <ul
       id="nav"
       ref="refNav"
@@ -33,8 +33,9 @@
 </template>
 
 <script>
+import { throttle } from './util.js'
 export default {
-  name: "InfiniteScrollSpy01",
+  name: "ScrollSopyThrottle",
   components: {
     // HelloWorld
   },
@@ -45,6 +46,7 @@ export default {
       contentsElem:null,
       contentItems:null,
       offsetTops:[''],
+      throttle:null,
     };
   },
   created(){
@@ -75,7 +77,9 @@ export default {
     // 각 #contents > div 요소들의 시작 위치, 끝 위치와
     // 스크롤 위치를 비교하여 사용자가 현재 어느 위치를
     // 스크롤 하고 있는지 감지를 한다.
-    window.addEventListener("scroll", this.setFocusElement);
+    this.throttle = throttle(this.setFocusElement, 300);
+    window.addEventListener("scroll", this.throttle);
+    // window.addEventListener("scroll", this.setFocusElement);
     // 강좌에서는 윈도우 크기를 변경하지 않았지만
     // 윈도우 크기를 변경을 하는 사용자들을 위해
     // 윈도우 크기 변경 이벤트를 감지하고,
@@ -113,6 +117,7 @@ export default {
       this.setFocusElement();
     },
     setFocusElement(){
+      console.log('asdf');
       const scrollTop = document.documentElement.scrollTop;
       const targetIndex = this.offsetTops.findIndex(([from, to]) =>(
         // scrollTop >= from && scrollTop < to
