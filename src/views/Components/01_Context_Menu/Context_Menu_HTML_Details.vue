@@ -203,7 +203,7 @@ export default {
   mounted () {
     const items = this.$refs.refWrapper.querySelectorAll('details');
 
-    window.body.addEventListener('click', function (e) {
+    document.body.addEventListener('click', function (e) {
       if (e.target.nodeName !== 'SUMMARY' &&
     e.target.nodeName !== 'P') {
         items.forEach(function (item) {
@@ -218,7 +218,7 @@ export default {
     });
   },
   unmounted(){
-    window.body.removeEventListener('click', function (e) {
+    document.body.removeEventListener('click', function (e) {
       if (e.target.nodeName !== 'SUMMARY' &&
     e.target.nodeName !== 'P') {
         items.forEach(function (item) {
