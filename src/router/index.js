@@ -106,6 +106,11 @@ const routes = [
     name: 'scroll_spy_throttle_github',
     component: Scroll_Spy_Throttle
   },
+  {
+    path: '/my_component/scroll_spy_intersectionobserver',
+    name: 'scroll_spy_intersectionobserver_github',
+    component: Scroll_Spy_IntersectionObserver
+  },
 ]
 
 const router = createRouter({
