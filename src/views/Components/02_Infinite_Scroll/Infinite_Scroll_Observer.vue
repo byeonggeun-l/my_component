@@ -30,7 +30,7 @@ export default {
   components: {
     // HelloWorld
   },
-  data(){
+  data() {
     return {
       page: 0,
       list:[],
@@ -43,7 +43,7 @@ export default {
       timeOut:null,
     };
   },
-  created(){
+  created() {
     // 페이지 이동 시 스크롤 초기화.
     window.scrollTo(0, 0);
   },
@@ -86,7 +86,7 @@ export default {
     // onScroll
     // 스크롤이 페이지 맨 하단에 위치해있는지 감지를 한다.
     // 맨 하단에 위치해 있을 경우 loadMore 메서드를 호출한다.
-    onScroll(event){
+    onScroll(event) {
       console.log('Call onScroll()');
       const {
         scrollHeight,
@@ -103,7 +103,7 @@ export default {
     // 0이 아닌 경우 맨 아래에 loading 이 위치해 있어야 하므로
     // fetchMore 위치에 loading 이 나오게 한다.
     // 또한 renderList 를 호출한다.
-    async loadMore(){      
+    async loadMore() {      
 
       const target = this.page ? this.fetchMoreTrigger : this.app;
 
@@ -116,7 +116,7 @@ export default {
     // dummyFetcher 함수를 이용하여
     // 서버로부터 데이터를 받아오는 느낌을 들게 하기 위해
     // 딜레이 및 getList 함수를 호출시키고,    
-    async renderList(page){
+    async renderList(page) {
       const list = await this.dummyFetcher(this.getList, page);      
 
       const frag = document.createDocumentFragment();
@@ -126,7 +126,7 @@ export default {
 
 
 
-    dummyFetcher(method, args){
+    dummyFetcher(method, args) {
       return new Promise(
         resolve => {
           this.timeOut = setTimeout(() => {
@@ -141,20 +141,20 @@ export default {
 
 
     
-    getList(page = 0){
+    getList(page = 0) {
       const list = [];
       list[page] = this.listBuilder(page);
       return list[page];
     },
     
-    listBuilder(page){
+    listBuilder(page) {
       return Array.from({ length: this.ITEMS_PER_PAGE }).map((_, i) =>
         this.itemBuilder(page * this.ITEMS_PER_PAGE + i + 1)
       );
     },
 
 
-    renderItem({ id, no, text }){
+    renderItem({ id, no, text }) {
       const li = document.createElement("li");
       li.insertAdjacentHTML(
         "beforeend",
@@ -173,7 +173,7 @@ export default {
 
 
 
-    itemBuilder(no){
+    itemBuilder(no) {
       const obj = {
         id: uuidv4(),
         no: no,

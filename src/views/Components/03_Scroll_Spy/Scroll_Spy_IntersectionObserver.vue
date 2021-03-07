@@ -33,21 +33,17 @@
 </template>
 
 <script>
-import { throttle, debounce } from './util.js'
 export default {
-  name: "ScrollSopyThrottle",
+  name: "ScrollSpyIntersectionObserver",
   components: {
     // HelloWorld
   },
   data() {
     return {
-      navElem:null,
-      navItems:null,
-      contentsElem:null,
-      contentItems:null,
-      offsetTops:[''],
-      throttle:null,
-      debounce:null,
+      navElem: null,
+      navItems: null,
+      contentsElem: null,
+      contentItems: null,
     };
   },
   created() {
@@ -55,52 +51,35 @@ export default {
     window.scrollTo(0, 0);
   },  
   mounted() {
-    // Init
     this.navElem = this.$refs.refNav;
     this.navItems = Array.from(this.navElem.children);
     this.contentsElem = this.$refs.refContents;
     this.contentItems = Array.from(this.contentsElem.children);
-    // ========================================================
-    // this.contentItems 은 #content > div 요소들의 값들이 들어있다.
-    // offsetTop 에는 부모를 기준으로한 엘리먼트의 좌표값이 들어있다.
-    // 그렇다면 첫번째 요소는 당연히 부모로부터 맨 아래에 있으므로 0에 
-    // 위치해 있을 것이다.
-    // ========================================================
-    // clientHeight 는 엘리먼트의 내부 높이를 픽셀로 반환한다.
-    // ========================================================
-    this.offsetTops = this.contentItems.map((elem) => {
-      const [ofs, clh] = [elem.offsetTop, elem.clientHeight];
-      return [ofs - clh / 2, ofs + clh / 2];
-    });
-    // Init
 
-    // Add Event
-    // 각 #contents > div 요소들의 시작 위치, 끝 위치와
-    // 스크롤 위치를 비교하여 사용자가 현재 어느 위치를
-    // 스크롤 하고 있는지 감지를 한다.
-    this.throttle = throttle(this.setFocusElement, 300);
-    window.addEventListener("scroll", this.throttle);
-    // window.addEventListener("scroll", this.setFocusElement);
-    // 강좌에서는 윈도우 크기를 변경하지 않았지만
-    // 윈도우 크기를 변경을 하는 사용자들을 위해
-    // 윈도우 크기 변경 이벤트를 감지하고,
-    // 그때마다 요소 크기들을 다시 셋팅해야한다.
-    this.debounce = debounce(this.resetElementPosition, 300);
-    window.addEventListener("resize", this.debounce);
-    // Add event
+    const scrollSpyObserver = new IntersectionObserver(
+      (entries) => {
+        const { target } = entries.find(entry => entry.isIntersecting) || {};
+        const targetIndex = this.contentItems.indexOf(target);
+        Array.from(this.navItems).forEach((e, i) => {
+          if (i === targetIndex) {
+            e.classList.add('on');
+          } else {
+            e.classList.remove('on');
+          }
+        });
+      },
+      {
+        threshold: 0.5,        
+      }
+    );
+    this.contentItems.forEach((item) => scrollSpyObserver.observe(item));
+
+
 
   },
   unmounted() {
-    ///////////////////////////////////
-    window.removeEventListener("scroll", this.throttle);
-    window.removeEventListener("resize", this.debounce);
-    ///////////////////////////////////
   },
   methods:{
-    // 클릭한 요소를 포함하고 있는 
-    // li 요소를 찾아서
-    // scrollIntoView 내장 함수를 이용해서
-    // 스크롤 한다.
     clickNav(e) {
       const targetElem = e.target;
       if (targetElem.tagName === "BUTTON") {
@@ -111,24 +90,6 @@ export default {
         });
       }
     },
-    resetElementPosition() {
-      this.offsetTops = this.contentItems.map((elem) => {
-        const [ofs, clh] = [elem.offsetTop, elem.clientHeight];
-        return [ofs - clh / 2, ofs + clh / 2];
-      });
-      this.setFocusElement();
-    },
-    setFocusElement() {
-      const scrollTop = document.documentElement.scrollTop;
-      const targetIndex = this.offsetTops.findIndex(([from, to]) =>(
-        // scrollTop >= from && scrollTop < to
-        scrollTop >= from && scrollTop < to
-      ));
-      Array.from(this.navItems).forEach((c, i) => {
-        if (i !== targetIndex) c.classList.remove('on');
-        else c.classList.add('on');
-      })
-    }
   }
 }
 </script>

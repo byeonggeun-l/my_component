@@ -8,6 +8,7 @@ import Infinite_Scroll_Debounce from '../views/Components/02_Infinite_Scroll/Inf
 import Infinite_Scroll_Observer from '../views/Components/02_Infinite_Scroll/Infinite_Scroll_Observer'
 import Scroll_Spy_Original from '../views/Components/03_Scroll_Spy/Scroll_Spy_Original'
 import Scroll_Spy_Throttle from '../views/Components/03_Scroll_Spy/Scroll_Spy_Throttle'
+import Scroll_Spy_IntersectionObserver from '../views/Components/03_Scroll_Spy/Scroll_Spy_IntersectionObserver'
 
 const routes = [
   {
@@ -59,6 +60,11 @@ const routes = [
     path: '/scroll_spy_throttle',
     name: 'scroll_spy_throttle',
     component: Scroll_Spy_Throttle
+  },
+  {
+    path: '/scroll_spy_intersectionobserver',
+    name: 'scroll_spy_intersectionobserver',
+    component: Scroll_Spy_IntersectionObserver
   },
   //Default For Github
   //Default For Github

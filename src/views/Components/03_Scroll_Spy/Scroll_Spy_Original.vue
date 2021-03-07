@@ -38,7 +38,7 @@ export default {
   components: {
     // HelloWorld
   },
-  data(){
+  data() {
     return {
       navElem:null,
       navItems:null,
@@ -47,7 +47,7 @@ export default {
       offsetTops:[''],
     };
   },
-  created(){
+  created() {
     // 페이지 이동 시 스크롤 초기화.
     window.scrollTo(0, 0);
   },  
@@ -84,7 +84,7 @@ export default {
     // Add event
 
   },
-  unmounted(){
+  unmounted() {
     ///////////////////////////////////
     window.removeEventListener("scroll", this.setFocusElement);
     window.removeEventListener("resize", this.resetElementPosition);
@@ -95,7 +95,7 @@ export default {
     // li 요소를 찾아서
     // scrollIntoView 내장 함수를 이용해서
     // 스크롤 한다.
-    clickNav(e){
+    clickNav(e) {
       const targetElem = e.target;
       if (targetElem.tagName === "BUTTON") {
         const targetIndex = this.navItems.indexOf(targetElem.parentElement);
@@ -105,21 +105,21 @@ export default {
         });
       }
     },
-    resetElementPosition(){
+    resetElementPosition() {
       this.offsetTops = this.contentItems.map((elem) => {
         const [ofs, clh] = [elem.offsetTop, elem.clientHeight];
         return [ofs - clh / 2, ofs + clh / 2];
       });
       this.setFocusElement();
     },
-    setFocusElement(){
+    setFocusElement() {
       const scrollTop = document.documentElement.scrollTop;
       const targetIndex = this.offsetTops.findIndex(([from, to]) =>(
         // scrollTop >= from && scrollTop < to
         scrollTop >= from && scrollTop < to
       ));
       Array.from(this.navItems).forEach((c, i) => {
-        if(i !== targetIndex) c.classList.remove('on');
+        if (i !== targetIndex) c.classList.remove('on');
         else c.classList.add('on');
       })
     }

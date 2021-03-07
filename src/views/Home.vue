@@ -157,6 +157,27 @@
         `
       "
     />
+    <Informatiom
+      :component-name="'Scroll_Spy_IntersectionObserver'"
+      :component-path="
+        '/src/views/Components/03_Scroll_Spy/Scroll_Spy_IntersectionObserver'
+      "
+      :component-link="'Scroll_Spy_IntersectionObserver'"
+      :component-desc="
+        `스크롤 스파이(스크롤 네비게이션)`
+      "
+      :component-skills="
+        `HTML(Details), CSS, 스크롤이벤트감지, IntersectionObserver
+        IntersectionObserver 를 활용하여 스크롤 하고 있는 사용자가
+        어떤 위치를 스크롤 하고 있는지 관찰하여
+        그에 따른 반응을 한다.
+        기존 스크롤 스파이에서 요소들의 위치를 각각 계산하여
+        반 정도 새로운 요소의 위치에 스크롤 했을 때를
+        감지를 했는데 IntersectionObserver의 threshold 속성을 이용하여
+        쉽게 반(50%) 위치를 스크롤 했을 때를 감지를 할 수 있다.
+        `
+      "
+    />
   </div>
 </template>
 
