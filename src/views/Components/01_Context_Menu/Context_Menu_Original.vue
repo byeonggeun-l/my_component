@@ -217,7 +217,7 @@
 <script>
 export default {
   name: 'ContextMenuOriginal',
-  created(){
+  created() {
     // 페이지 이동 시 스크롤 초기화.
     window.scrollTo(0, 0);
   },

@@ -10,6 +10,7 @@ import Scroll_Spy_Original from '../views/Components/03_Scroll_Spy/Scroll_Spy_Or
 import Scroll_Spy_Throttle from '../views/Components/03_Scroll_Spy/Scroll_Spy_Throttle'
 import Scroll_Spy_IntersectionObserver from '../views/Components/03_Scroll_Spy/Scroll_Spy_IntersectionObserver'
 import Scroll_Top_01 from '../views/Components/04_Scroll_Top/Scroll_Top_01'
+import Scroll_Badges from '../views/Components/Example/Scroll_Badges'
 
 const routes = [
   {
@@ -72,6 +73,11 @@ const routes = [
     name: 'scroll_top_01',
     component: Scroll_Top_01
   },
+  {
+    path: '/scroll_badges',
+    name: 'scroll_badges',
+    component: Scroll_Badges
+  },
   //Default For Github
   //Default For Github
   //Default For Github
@@ -121,6 +127,11 @@ const routes = [
     path: '/scroll_top_01',
     name: 'scroll_top_01_github',
     component: Scroll_Top_01
+  },
+  {
+    path: '/scroll_badges',
+    name: 'scroll_badges_github',
+    component: Scroll_Badges
   },
 ]
 

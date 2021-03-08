@@ -3,14 +3,20 @@
     <hr>
     <p>
       컴포넌트명 : 
-      <span class="information__text">[ {{ componentName }} ]</span>
+      <span class="information__text">
+        [ {{ componentName }} ]
+      </span>
     </p>
     <p>
       위치 : 
-      <span class="information__text">[ {{ componentPath }} ]</span><br>
+      <span class="information__text">
+        [ {{ componentPath }} ]
+      </span><br>
       바로가기 : 
       <router-link :to="componentLink">
-        <span class="information__text">[ {{ componentName }} ]</span>
+        <span class="information__text">
+          [ {{ componentName }} ]
+        </span>
       </router-link>
     </p>
     <p>

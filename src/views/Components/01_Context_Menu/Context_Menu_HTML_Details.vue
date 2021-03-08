@@ -196,7 +196,7 @@
 <script>
 export default {
   name: 'ContextMenuHTMLDetails',
-  created(){
+  created() {
     // 페이지 이동 시 스크롤 초기화.
     window.scrollTo(0, 0);
   },
@@ -217,7 +217,9 @@ export default {
       });
     });
   },
-  unmounted(){
+  unmounted() {
+    const items = this.$refs.refWrapper.querySelectorAll('details');
+    
     document.body.removeEventListener('click', function (e) {
       if (e.target.nodeName !== 'SUMMARY' &&
     e.target.nodeName !== 'P') {

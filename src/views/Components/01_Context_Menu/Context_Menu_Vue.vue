@@ -222,29 +222,29 @@ export default {
       clickedElem: null,
     };
   },
-  created(){
+  created() {
     // 페이지 이동 시 스크롤 초기화.
     window.scrollTo(0, 0);
   },
   mounted () {
   },
   methods: {
-    click(e){
-      if(e.target.classList.contains('item')) {
-        if(this.clickedElem === null){
+    click(e) {
+      if (e.target.classList.contains('item')) {
+        if (this.clickedElem === null) {
           this.clickedElem = e.target;
           this.clickedElem.classList.toggle('open');
-        } else{
-          if(e.target.classList.contains('open')){
+        } else {
+          if (e.target.classList.contains('open')) {
             e.target.classList.toggle('open');
-          } else{
+          } else {
             this.clickedElem.classList.remove('open');
             this.clickedElem = e.target;
             this.clickedElem.classList.toggle('open');
           }
         }
       } else {
-        if(this.clickedElem !== null){
+        if (this.clickedElem !== null) {
           this.clickedElem.classList.remove('open');
         }
       }

@@ -12,6 +12,8 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "gsap": "^3.6.0",
+    "loadsh": "^0.0.4",
     "lorem-ipsum": "^2.0.3",
     "prettier": "^1.19.1",
     "vue": "^3.0.0",

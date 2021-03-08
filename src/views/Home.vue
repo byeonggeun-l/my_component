@@ -198,6 +198,28 @@
         `
       "
     />
+    <Informatiom
+      :component-name="'Scroll_Badges'"
+      :component-path="
+        '/src/views/Components/Example/Scroll_Badges'
+      "
+      :component-link="'Scroll_Badges'"
+      :component-desc="
+        `HTML, CSS, Javascript, 이벤트 리스너, lodash, gsap`
+      "
+      :component-skills="
+        `
+        각종 유용한 라이브러리를 이용해본다.
+        lodash 라이브러리를 이용하여 Throttle 기능을 손쉽게 구현하고,
+        gsap 라이브러리를 활용하여 좀 더 역동감 있게 배너가 사라지게 만들어본다.
+        (자바스크립트 애니메이션).
+        - 스크롤 Y 값이 500 이상이면 사라지고,
+        500 이하면 보인다.
+        사라지고 다시 보이는 과정이 gsap 자바스크립트 라이브러리 애니메이션을 이용해
+        역동감있게 표현이 된다.
+        `
+      "
+    />
   </div>
 </template>
 
