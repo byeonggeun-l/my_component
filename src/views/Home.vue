@@ -178,6 +178,26 @@
         `
       "
     />
+    <Informatiom
+      :component-name="'Scroll_Top_01'"
+      :component-path="
+        '/src/views/Components/04_Scroll_Top/Scroll_Top_01'
+      "
+      :component-link="'Scroll_Top_01'"
+      :component-desc="
+        `HTML, CSS, Javascript, 이벤트 리스너, 클래스 바인드.`
+      "
+      :component-skills="
+        `
+        스크롤 위치에 따른 클래스 값의 변화로
+        탑 부분의 변화를 준다.
+        강좌에서는 쿼리셀렉터, 클래스리스트를 통하여
+        클래스 값을 변화를 줬지만
+        리퍼러, 클래스 바인드 기능으로 구현을 해봤다.
+        또한 
+        `
+      "
+    />
   </div>
 </template>
 

@@ -9,6 +9,7 @@ import Infinite_Scroll_Observer from '../views/Components/02_Infinite_Scroll/Inf
 import Scroll_Spy_Original from '../views/Components/03_Scroll_Spy/Scroll_Spy_Original'
 import Scroll_Spy_Throttle from '../views/Components/03_Scroll_Spy/Scroll_Spy_Throttle'
 import Scroll_Spy_IntersectionObserver from '../views/Components/03_Scroll_Spy/Scroll_Spy_IntersectionObserver'
+import Scroll_Top_01 from '../views/Components/04_Scroll_Top/Scroll_Top_01'
 
 const routes = [
   {
@@ -66,6 +67,11 @@ const routes = [
     name: 'scroll_spy_intersectionobserver',
     component: Scroll_Spy_IntersectionObserver
   },
+  {
+    path: '/scroll_top_01',
+    name: 'scroll_top_01',
+    component: Scroll_Top_01
+  },
   //Default For Github
   //Default For Github
   //Default For Github
@@ -110,6 +116,11 @@ const routes = [
     path: '/my_component/scroll_spy_intersectionobserver',
     name: 'scroll_spy_intersectionobserver_github',
     component: Scroll_Spy_IntersectionObserver
+  },
+  {
+    path: '/scroll_top_01',
+    name: 'scroll_top_01_github',
+    component: Scroll_Top_01
   },
 ]
 
