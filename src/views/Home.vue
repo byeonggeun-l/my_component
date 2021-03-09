@@ -219,6 +219,23 @@
         `
       "
     />
+    <Informatiom
+      :component-name="'Scroll_Top_02'"
+      :component-path="
+        '/src/views/Components/04_Scroll_Top/Scroll_Top_01'
+      "
+      :component-link="'Scroll_Top_02'"
+      :component-desc="
+        `HTML, CSS, Javascript, 이벤트 리스너, 클래스 바인드.`
+      "
+      :component-skills="
+        `
+        스크롤 위치에 따른 클래스 값의 변화로<br/>
+        탑 부분의 변화를 주는 것이 아닌,<br/>
+        휠을 올리냐 내리냐의 판단으로 변화를 주었다.<br />
+        `
+      "
+    />
   </div>
 </template>
 
