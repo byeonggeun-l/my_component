@@ -17,6 +17,12 @@
             alt="badge"
           >
         </div>
+        <div class="badge">
+          <img
+            src="@/assets/images/starbucks_example/badge3.jpg"
+            alt="badge"
+          >
+        </div>
       </div>
     </header>  
   </div>
@@ -28,12 +34,21 @@ import gsap from "gsap";
 
 export default {
   name: "ScrollBadges",
+  data() {
+    return {
+      throttle:null,
+    }
+  },
   created() {
     // 페이지 이동 시 스크롤 초기화.
     window.scrollTo(0, 0);
   },
   mounted() {
-    window.addEventListener('scroll', throttle(this.scrolling, 300));
+    this.throttle = throttle(this.scrolling, 300);
+    window.addEventListener('scroll', this.throttle);
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.throttle);
   },
   methods:{
     scrolling() {

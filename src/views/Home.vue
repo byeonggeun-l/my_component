@@ -236,6 +236,30 @@
         `
       "
     />
+    <Informatiom
+      :component-name="'FadeElements'"
+      :component-path="
+        '/src/views/Components/Example/FadeElements'
+      "
+      :component-link="'visual_section'"
+      :component-desc="
+        `HTML, CSS, Javascript, gsap`
+      "
+      :component-skills="
+        `
+        gsap 라이브러리를 이용해서 시간차로<br />
+        요소들이 나오게 하여 역동적인 화면을 구현할 수 있게 한다.<br />
+        페이드 기능이 있는 엘리먼트를 프롭스 값을 전달하는 것만으로<br />
+        쉽게 만들 수 있도록 하였다.<br />
+        elTagName(required) : a or img<br />
+        fadeSec(required) : 0.1~ 99999<br />
+        classList : className<br />
+        imgTagSrc : img src<br />
+        imgTagAlt : img alt<br />
+        aTagInnerText : a tag innertext<br />
+        `
+      "
+    />
   </div>
 </template>
 

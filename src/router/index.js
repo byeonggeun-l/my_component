@@ -12,6 +12,7 @@ import Scroll_Spy_IntersectionObserver from '../views/Components/03_Scroll_Spy/S
 import Scroll_Top_01 from '../views/Components/04_Scroll_Top/Scroll_Top_01'
 import Scroll_Badges from '../views/Components/Example/Scroll_Badges'
 import Scroll_Top_02 from '../views/Components/04_Scroll_Top/Scroll_Top_02'
+import Visual_Section from '../views/Components/Example/VisualSection'
 
 const routes = [
   {
@@ -84,6 +85,11 @@ const routes = [
     name: 'scroll_top_02',
     component: Scroll_Top_02
   },
+  {
+    path: '/visual_section',
+    name: 'visual_section',
+    component: Visual_Section
+  },
   //Default For Github
   //Default For Github
   //Default For Github
@@ -143,6 +149,11 @@ const routes = [
     path: '/scroll_top_02',
     name: 'scroll_top_02_github',
     component: Scroll_Top_02
+  },
+  {
+    path: '/visual_section',
+    name: 'visual_section_github',
+    component: Visual_Section
   },
 ]
 
