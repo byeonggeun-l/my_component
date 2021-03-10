@@ -260,6 +260,27 @@
         `
       "
     />
+    <Informatiom
+      :component-name="'SwiperVertical'"
+      :component-path="
+        '/src/views/Components/Example/SwiperVertical'
+      "
+      :component-link="'swiper_vertical'"
+      :component-desc="
+        `HTML, CSS, Javascript, Swiper`
+      "
+      :component-skills="
+        `
+        Swiper 라이브러리를 사용하여<br />
+        슬라이더 기능을 구현한다.<br />
+        라이브러리 자체에서 vue.js 에서 사용할 수 있도록<br />
+        맞춤형 컴포넌트를 제공하고 있어 Vue.js 환경에서<br />
+        매우 손쉽게 사용할 수 있다.<br />
+        여러가지 기능&스타일을 제공하고 있는데<br />
+        이번에는 슬라이드(vertical) 기능만을 구현해봤다.<br />
+        `
+      "
+    />
   </div>
 </template>
 

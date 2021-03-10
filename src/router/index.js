@@ -13,6 +13,7 @@ import Scroll_Top_01 from '../views/Components/04_Scroll_Top/Scroll_Top_01'
 import Scroll_Badges from '../views/Components/Example/Scroll_Badges'
 import Scroll_Top_02 from '../views/Components/04_Scroll_Top/Scroll_Top_02'
 import Visual_Section from '../views/Components/Example/VisualSection'
+import SwiperVertical from '../views/Components/Example/SwiperVertical'
 
 const routes = [
   {
@@ -90,6 +91,11 @@ const routes = [
     name: 'visual_section',
     component: Visual_Section
   },
+  {
+    path: '/swiper_vertical',
+    name: 'swiper_vertical',
+    component: SwiperVertical
+  },
   //Default For Github
   //Default For Github
   //Default For Github
@@ -154,6 +160,11 @@ const routes = [
     path: '/visual_section',
     name: 'visual_section_github',
     component: Visual_Section
+  },
+  {
+    path: '/swiper_vertical',
+    name: 'swiper_vertical_github',
+    component: SwiperVertical
   },
 ]
 
