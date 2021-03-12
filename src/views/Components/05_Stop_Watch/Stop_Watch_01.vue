@@ -130,7 +130,6 @@ export default {
         $fragment.appendChild($index);
 
         const $newLab = document.createElement('div');
-        console.log(newLap);
         $newLab.textContent = formatElapsedTime(newLap);
         $fragment.appendChild($newLab);
 
