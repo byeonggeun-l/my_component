@@ -281,6 +281,21 @@
         `
       "
     />
+    <Informatiom
+      :component-name="'StopWatch'"
+      :component-path="
+        '/src/views/Components/05_Stop_Watch/Stop_Watch_01.vue'
+      "
+      :component-link="'stop_watch_01'"
+      :component-desc="
+        `HTML, CSS, Javascript`
+      "
+      :component-skills="
+        `
+        스탑 와치 Ver.1
+        `
+      "
+    />
   </div>
 </template>
 
