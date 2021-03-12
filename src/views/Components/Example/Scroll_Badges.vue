@@ -7,19 +7,19 @@
       >
         <div class="badge">
           <img
-            src="@/assets/images/starbucks_example/badge1.jpg"
+            src="@/assets/images/badge1.jpg"
             alt="badge"
           >
         </div>
         <div class="badge">
           <img
-            src="@/assets/images/starbucks_example/badge2.jpg"
+            src="@/assets/images/badge2.jpg"
             alt="badge"
           >
         </div>
         <div class="badge">
           <img
-            src="@/assets/images/starbucks_example/badge3.jpg"
+            src="@/assets/images/badge3.jpg"
             alt="badge"
           >
         </div>

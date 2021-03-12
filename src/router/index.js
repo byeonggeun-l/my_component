@@ -15,6 +15,7 @@ import Scroll_Top_02 from '../views/Components/04_Scroll_Top/Scroll_Top_02'
 import Visual_Section from '../views/Components/Example/VisualSection'
 import SwiperVertical from '../views/Components/Example/SwiperVertical'
 import Stop_Watch_01 from '../views/Components/05_Stop_Watch/Stop_Watch_01'
+import NoticeSection from '../views/Components/Example/NoticeSection'
 
 const routes = [
   {
@@ -102,6 +103,11 @@ const routes = [
     name: 'stop_watch_01',
     component: Stop_Watch_01
   },
+  {
+    path: '/notice_section',
+    name: 'notice_section',
+    component: NoticeSection
+  },
   //Default For Github
   //Default For Github
   //Default For Github
@@ -176,6 +182,11 @@ const routes = [
     path: '/stop_watch_01',
     name: 'stop_watch_01_github',
     component: Stop_Watch_01
+  },
+  {
+    path: '/notice_section',
+    name: 'notice_section_github',
+    component: NoticeSection
   },
 ]
 

@@ -296,6 +296,22 @@
         `
       "
     />
+    <Informatiom
+      :component-name="'NoticeSection'"
+      :component-path="
+        '/src/views/Components/Example/NoticeSection.vue'
+      "
+      :component-link="'notice_section'"
+      :component-desc="
+        `HTML, CSS, Javascript`
+      "
+      :component-skills="
+        `
+        조건부 렌더링을 통해 상황에 따른 요소 출력 및<br />
+        CSS를 활용한 토글 기능 구현.<br />
+        `
+      "
+    />
   </div>
 </template>
 
